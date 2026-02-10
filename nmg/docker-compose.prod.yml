@@ -1,0 +1,15 @@
+services:
+  nmgsoft:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nmgsoft
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    networks:
+      - web-proxy-net
+
+networks:
+  web-proxy-net:
+    external: true

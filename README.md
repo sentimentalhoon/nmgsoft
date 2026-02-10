@@ -48,3 +48,23 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Deployment
+
+### 1. Prerequisites
+- Docker & Docker Compose installed on the server.
+- The `infrastructure` project setup for Nginx Gateway.
+
+### 2. Infrastructure Setup
+1. Go to `infrastructure` directory.
+2. Update `.env` (or run `./setup-env.sh`) to include `NMGSOFT_DOMAIN=nmgsoft.duckdns.org`.
+3. If this is the first time, run `./init-ssl.sh` to generate certificates.
+4. If certificates exist, run `./apply-nginx-config.sh` to generate the Nginx config.
+
+### 3. Deploy NMGSOFT
+1. Navigate to `nmgsoft/nmg` directory on the server.
+2. Build and start the container:
+   ```bash
+   docker compose -f docker-compose.prod.yml up -d --build
+   ```
+3. The site should be accessible at https://nmgsoft.duckdns.org
