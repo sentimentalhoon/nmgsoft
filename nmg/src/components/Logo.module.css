@@ -1,0 +1,295 @@
+/* Logo.module.css */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  aspect-ratio: 3/2;
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* 1. Minimalist Sans */
+.style1 {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--black);
+  letter-spacing: -0.05em;
+}
+
+/* 2. Bold & Heavy */
+.style2 {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* 3. Futuristic Tech */
+.style3 {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--gray-800);
+  letter-spacing: 0.2em;
+  border-bottom: 2px solid var(--black);
+  padding-bottom: 4px;
+}
+
+/* 4. Retro/Vintage */
+.style4 {
+  font-family: 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--gray-900);
+  text-shadow: 2px 2px 0px var(--gray-200);
+}
+
+/* 5. Handwritten/Style (Simulated with cursive if available or generic) */
+.style5 {
+  font-family: cursive;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: var(--gray-700);
+  transform: rotate(-5deg);
+}
+
+/* 6. 3D Dimensional */
+.style6 {
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--white);
+  -webkit-text-stroke: 1px var(--black);
+  text-shadow: 
+    2px 2px 0 var(--black),
+    4px 4px 0 var(--gray-300);
+}
+
+/* 7. Gradient Fill (Black to Grey for monochrome) */
+.style7 {
+  font-weight: 800;
+  font-size: 1.7rem;
+  background: linear-gradient(135deg, #000000 0%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 8. Neon/Glow (Monochrome glow) */
+.style8 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  background-color: var(--black);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 9. Glitch Effect */
+.style9 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  position: relative;
+  color: var(--black);
+}
+.style9::before, .style9::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+}
+.style9::before {
+  left: 2px;
+  text-shadow: -1px 0 #999;
+  clip-path: inset(0 0 0 0);
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+.style9::after {
+  left: -2px;
+  text-shadow: -1px 0 #ccc;
+  clip-path: inset(0 0 0 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(20% 0 80% 0); }
+  20% { clip-path: inset(60% 0 10% 0); }
+  40% { clip-path: inset(40% 0 50% 0); }
+  60% { clip-path: inset(80% 0 5% 0); }
+  80% { clip-path: inset(10% 0 40% 0); }
+  100% { clip-path: inset(55% 0 25% 0); }
+}
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(15% 0 60% 0); }
+  20% { clip-path: inset(80% 0 5% 0); }
+  40% { clip-path: inset(30% 0 35% 0); }
+  60% { clip-path: inset(10% 0 80% 0); }
+  80% { clip-path: inset(50% 0 20% 0); }
+  100% { clip-path: inset(70% 0 10% 0); }
+}
+
+/* 10. Outline/Stroke */
+.style10 {
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--black);
+  letter-spacing: 0.1em;
+}
+
+/* 11. Elegant Serif */
+.style11 {
+  font-family: 'Georgia', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--black);
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  padding: 4px 0;
+}
+
+/* 12. Geometric (Boxed) */
+.style12 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 8px 16px;
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+/* 13. Abstract Art (Blurry) */
+.style13 {
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--black);
+  filter: blur(1.5px);
+  letter-spacing: 0.2rem;
+}
+
+/* 14. Corporate Professional */
+.style14 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--gray-800);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.style14::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--gray-800);
+  border-radius: 2px;
+}
+
+/* 15. Playful/Fun (Bouncy) */
+.style15 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--black);
+  transform: skew(-10deg);
+}
+
+/* 16. Monogram/Iconic (Circle) */
+.style16 {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--black);
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px;
+}
+
+/* 17. Metallic/Gold (Simulated with gradients) */
+.style17 {
+  font-weight: 800;
+  font-size: 1.6rem;
+  background: linear-gradient(to bottom, #cfc7c8 0%, #5f5f5f 50%, #2c2c2c 51%, #a7a7a7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 18. Grunge/Textured (Dashed border) */
+.style18 {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--black);
+  border: 2px dashed var(--black);
+  padding: 0.5rem;
+}
+
+/* 19. Isometric (Transform) */
+.style19 {
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--gray-800);
+  transform: rotate(-15deg) skewX(15deg);
+  text-shadow: 
+    1px 1px 0 var(--gray-400),
+    2px 2px 0 var(--gray-300),
+    3px 3px 0 var(--gray-200);
+}
+
+/* 20. Animated (Underline slide) */
+.style20 {
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--black);
+  position: relative;
+}
+.style20::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  animation: slide-in 2s infinite;
+}
+@keyframes slide-in {
+  0% { transform: scaleX(0); transform-origin: bottom left; }
+  50% { transform: scaleX(1); transform-origin: bottom left; }
+  51% { transform: scaleX(1); transform-origin: bottom right; }
+  100% { transform: scaleX(0); transform-origin: bottom right; }
+}
+
+/* SVG Container specific styles */
+.svgIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}

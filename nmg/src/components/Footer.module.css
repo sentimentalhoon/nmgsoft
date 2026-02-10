@@ -1,0 +1,37 @@
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.contact {
+  margin-bottom: 40px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.email {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-700);
+  padding-bottom: 2px;
+  transition: border-color 0.3s;
+}
+
+.email:hover {
+  border-color: var(--white);
+}
+
+.copyright {
+  font-size: 12px;
+  color: var(--gray-600);
+}

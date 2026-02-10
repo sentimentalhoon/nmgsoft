@@ -1,0 +1,71 @@
+:root {
+  /* HSL Color Palette - Monochrome for Classy feel */
+  --foreground: #1a1a1a;
+  --background: #ffffff;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+
+  --font-sans:
+    "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Optional Dark Mode Support - can be enforced if we want strict black/white theme regardless of system */
+    /* For this specific request "Black & White theme", we stick to a defined aesthetic. */
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  color: var(--foreground);
+  background: var(--gray-100); /* Outer background */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Central Mobile Frame Wrapper */
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* The visual "App" container */
+#app-root {
+  width: 100%;
+  max-width: 640px;
+  background: var(--background);
+  min-height: 100vh;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
