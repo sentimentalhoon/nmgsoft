@@ -3,15 +3,27 @@ import Image from 'next/image';
 
 const LOGOS = [
   {
-    category: '앤명가 (N-Myeong-Ga) - Parent Company',
+    category: '앤명가 (N-Myeong-Ga) - Official Parent Company',
     items: [
-      { src: '/logos/nmyeongga-parent-logo.png', label: 'Holding Company' },
+      { src: '/logos/nmyeongga-parent-card-1.png', label: 'Premium Executive' },
+      { src: '/logos/nmyeongga-parent-card-2.png', label: 'Heritage Seal' },
+      { src: '/logos/nmyeongga-parent-card-3.png', label: 'Modern Abstract' },
     ]
   },
   {
-    category: 'NMGSOFT - Sophisticated',
+    category: '앤명가소프트 (NMG Soft) - IT Subsidiary',
     items: [
-      { src: '/logos/nmgsoft-sophisticated-logo.png', label: 'Sophisticated' },
+      { src: '/logos/nmg-soft-card-1.png', label: 'Tech Geometric' },
+      { src: '/logos/nmg-soft-card-2.png', label: 'Minimalist Cloud' },
+      { src: '/logos/nmg-soft-card-3.png', label: 'Pixel Creative' },
+    ]
+  },
+  {
+    category: '앤명가글램핑팜리조트 (NMG Glamping) - Leisure Subsidiary',
+    items: [
+      { src: '/logos/nmg-glamping-card-1.png', label: 'Line Art Badge' },
+      { src: '/logos/nmg-glamping-card-2.png', label: 'Watercolor Nature' },
+      { src: '/logos/nmg-glamping-card-3.png', label: 'Rustic Emblem' },
     ]
   },
   {
