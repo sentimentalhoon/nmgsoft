@@ -8,6 +8,9 @@ const LOGOS = [
     items: [
       { src: '/logos/official-logo-metallic.png', label: 'Official Metallic' },
       { src: '/logos/official-logo-black.png', label: 'Official Black & White' },
+      { src: '/logos/official-logo-3.png', label: 'Official Logo 3' },
+      { src: '/logos/official-logo-4.png', label: 'Official Logo 4' },
+      { src: '/logos/official-logo-5.png', label: 'Official Logo 5' },
     ]
   },
   {

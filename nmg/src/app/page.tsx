@@ -1,7 +1,5 @@
-import LogoShowcase from "@/components/LogoShowcase";
 import ImageLogoShowcase from "@/components/ImageLogoShowcase";
-import SvgLogoShowcase from "@/components/SvgLogoShowcase";
-import AdvancedSvgLogoShowcase from "@/components/AdvancedSvgLogoShowcase";
+import ModernLogo from "@/components/ModernLogo";
 import HeroVideo from "@/components/HeroVideo";
 
 export default function Home() {
@@ -11,11 +9,8 @@ export default function Home() {
       <div style={{ padding: '0 1rem', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
         <ImageLogoShowcase />
         <hr style={{ border: 'none', borderTop: '1px solid #eee', width: '100%' }} />
-        <SvgLogoShowcase />
+        <ModernLogo />
         <hr style={{ border: 'none', borderTop: '1px solid #eee', width: '100%' }} />
-        <AdvancedSvgLogoShowcase />
-        <hr style={{ border: 'none', borderTop: '1px solid #eee', width: '100%' }} />
-        <LogoShowcase />
       </div>
     </main>
   );
