@@ -1,7 +1,15 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 const LOGOS = [
+  {
+    category: 'Official Brand Identity (User Provided)',
+    items: [
+      { src: '/logos/official-logo-metallic.png', label: 'Official Metallic' },
+      { src: '/logos/official-logo-black.png', label: 'Official Black & White' },
+    ]
+  },
   {
     category: '앤명가 (N-Myeong-Ga) - Official Parent Company',
     items: [
@@ -78,6 +86,8 @@ const LOGOS = [
 ];
 
 const ImageLogoShowcase: React.FC = () => {
+  const [selectedLogo, setSelectedLogo] = useState<{ src: string, label: string } | null>(null);
+
   return (
     <div style={{ padding: '2rem', maxWidth: '100%', backgroundColor: '#f9fafb' }}>
       <h2 style={{
@@ -87,7 +97,7 @@ const ImageLogoShowcase: React.FC = () => {
         fontWeight: 'bold',
         color: '#111'
       }}>
-        AI Generated Brand Concepts
+        Brand Identity & Concepts
       </h2>
 
       {LOGOS.map((section) => (
@@ -109,16 +119,23 @@ const ImageLogoShowcase: React.FC = () => {
             justifyContent: 'center'
           }}>
             {section.items.map((logo, index) => (
-              <div key={`${section.category}-${index}`} style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                backgroundColor: '#fff',
-                padding: '1rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-                transition: 'transform 0.2s',
-              }}>
+              <div
+                key={`${section.category}-${index}`}
+                onClick={() => setSelectedLogo(logo)}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  backgroundColor: '#fff',
+                  padding: '1rem',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+                  transition: 'transform 0.2s',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              >
                 <div style={{
                   position: 'relative',
                   width: '100%',
@@ -140,6 +157,81 @@ const ImageLogoShowcase: React.FC = () => {
           </div>
         </div>
       ))}
+
+      {/* Lightbox Modal */}
+      {selectedLogo && (
+        <div
+          onClick={() => setSelectedLogo(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            backgroundColor: 'rgba(0,0,0,0.9)',
+            zIndex: 9999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem',
+            backdropFilter: 'blur(5px)'
+          }}
+        >
+          <button
+            onClick={() => setSelectedLogo(null)}
+            style={{
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              backgroundColor: 'rgba(255,255,255,0.2)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '50%',
+              width: '48px',
+              height: '48px',
+              fontSize: '24px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'background-color 0.2s'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.4)'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'}
+          >
+            ✕
+          </button>
+
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '800px',
+              height: '80vh',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+              <Image
+                src={selectedLogo.src}
+                alt={selectedLogo.label}
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <p style={{
+              color: 'white',
+              marginTop: '1.5rem',
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              textShadow: '0 2px 4px rgba(0,0,0,0.5)'
+            }}>
+              {selectedLogo.label}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
