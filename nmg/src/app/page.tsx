@@ -1,5 +1,6 @@
 import ImageLogoShowcase from "@/components/ImageLogoShowcase";
 import ModernLogo from "@/components/ModernLogo";
+import VideoShowcase from "@/components/VideoShowcase";
 import HeroVideo from "@/components/HeroVideo";
 
 export default function Home() {
@@ -10,6 +11,8 @@ export default function Home() {
         <ImageLogoShowcase />
         <hr style={{ border: 'none', borderTop: '1px solid #eee', width: '100%' }} />
         <ModernLogo />
+        <hr style={{ border: 'none', borderTop: '1px solid #eee', width: '100%' }} />
+        <VideoShowcase />
         <hr style={{ border: 'none', borderTop: '1px solid #eee', width: '100%' }} />
       </div>
     </main>
